@@ -1,0 +1,162 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	font-size: 18px;
+	background: #ffffff;
+	color: #121212;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Montserrat, sans-serif;
+}
+
+h1 {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 72px;
+	line-height: 88px;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('data/fonts/Inter/Inter-Regular.eot');
+    src: local('Inter Regular'), local('Inter-Regular'),
+        url('data/fonts/Inter/Inter-Regular.eot?#iefix') format('embedded-opentype'),
+        url('data/fonts/Inter/Inter-Regular.woff2') format('woff2'),
+        url('data/fonts/Inter/Inter-Regular.woff') format('woff'),
+        url('data/fonts/Inter/Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('data/fonts/Inter/Inter-SemiBold.eot');
+    src: local('Inter Semi Bold'), local('Inter-SemiBold'),
+        url('data/fonts/Inter/Inter-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('data/fonts/Inter/Inter-SemiBold.woff2') format('woff2'),
+        url('data/fonts/Inter/Inter-SemiBold.woff') format('woff'),
+        url('data/fonts/Inter/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+.text_bold {
+	font-weight: 600;
+}
+
+.text_regular {
+	font-weight: 400;
+}
+
+.text_large {
+	font-style: normal;
+	font-size: 22px;
+	line-height: 136%;
+	letter-spacing: 0.75px;
+}
+
+.text_normal {
+	font-style: normal;
+	font-size: 18px;
+	line-height: 156%;
+}
+
+
+
+.logo {
+	background-image: url(data/images/main/logo-white.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: block;
+	width: 161px;
+	height: 50px;
+}
+
+.hello-display {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 6rem;
+	padding-bottom: 1rem;
+	background: linear-gradient(180deg, rgba(2, 101, 124, 0.6) 8%, rgba(113, 113, 113, 0) 19.56%), url(data/images/hello-background.jpg) no-repeat 100%;
+	min-height: 800px;
+	color: #ffffff;
+}
+
+.hello-display__textarea {
+	width: 690px;
+	display: block;
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	width: 1440px;
+	margin: 0 auto;
+	flex-wrap: nowrap;
+	flex-shrink: 1;
+}
+
+.container__header {
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+	padding: 16px 0 25px 0;
+}
+
+.container__column-center {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	width: 100%;
+	position: absolute;
+	height: 92px;
+}
+
+.header__menu {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: row;
+}
+
+.header__menu a {
+	position: relative;
+	text-decoration: none;
+	display: block;
+	overflow: hidden;
+	color: #fff;
+	margin-right: 24px;
+}
+
+.search-web {
+	display: flex;
+	padding: 0 0 0 16px;
+	flex-direction: row;
+	background: #ffffff;
+	border-radius: 360px;
+}
+
+.search-web__container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.search-web__el {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
