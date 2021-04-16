@@ -3,13 +3,15 @@
 <head>
 	<title>Гольфстрим</title>
 	<link type="text/CSS" rel="stylesheet" href="styles.css">
+	<script src="data/scripts/vue.min.js"></script>
 </head>
 <body>
 	<header>
 		<div class="container container__header">
-			<a href="#" class="logo"> </a>
 
-			<div class="header__menu">
+			<a href="#" class="logo"> </a> 				<!-- Лого -->
+
+			<div class="header__menu"> 					<!-- Меню -->
 				<a href="#">Агентствам</a>
 				<a href="#">Информация</a>
 				<a href="#">О компании</a>
@@ -18,24 +20,30 @@
 				<a href="#">Контакты</a>
 			</div>
 
-			<div class="header__rightmenu">
+			<div class="header__rightmenu">				<!-- Меню справа -->
 				<button class="button button__slim">
 					Каталог туров
 				</button>
 
-				<button class="hamburger"> </button>
+				<button class="hamburger"> 				<!-- Бургер -->
+					<img src="data/images/main/icons/burger_primary.svg" />
+				</button>
 			</div>
 		</div>
 	</header>
 
 	<section class="hello-display">
 		<div class="container container__column-center">
+
+			<!-- Заголовок и описание -->
 			<h1>Гольфстрим</h1>
 			<p class="hello-display__textarea text_large text_bold">
 				Туристическая компания с опытом работы более 10 лет.
 				Подберем тур в любую точку мира по доступной цене.
 			</p>
+			<!-- /Заголовок и описание -->
 
+			<!-- Поиск на главном экране -->
 			<div class="search-web">
 				<div class="search-web__container">
 					<a class="search-web__el search-web__el_place">
@@ -50,9 +58,10 @@
 						</div>
 					</a>
 
+					<div class="search-web__hr"> </div>
+
 					<a class="search-web__el search-web__starting">
-						<svg>
-						</svg>
+						<img src="data/images/main/icons/date_primary.svg" />
 						<div class="search-web__textarea">
 							<p class="text_large text_bold">
 								Начало отдыха
@@ -63,9 +72,10 @@
 						</div>
 					</a>
 
+					<div class="search-web__hr"> </div>
+
 					<a class="search-web__el search-web__departure">
-						<svg>
-						</svg>
+						<img src="data/images/main/icons/bus_primary.svg" />
 						<div class="search-web__textarea">
 							<p class="text_large text_bold">
 								Выезд
@@ -76,9 +86,10 @@
 						</div>
 					</a>
 
+					<div class="search-web__hr"> </div>
+
 					<a class="search-web__el search-web__humans">
-						<svg>
-						</svg>
+						<img src="data/images/main/icons/users_primary.svg" />
 						<div class="search-web__textarea">
 							<p class="text_large text_bold">
 								Количество гостей
@@ -91,9 +102,387 @@
 				</div>
 
 				<button class="search-web__button">
-					<svg></svg>
+					<img src="data/images/main/icons/search_white.svg" />
 				</button>
 			</div>
+			<!-- /Поиск на главном экране -->
+		</div>
+	</section>
+
+	<section class="container container__content">
+		<h3> Актуальные предложения туров </h3>
+
+		<div class="tabs">
+
+			<div class="tabs__nav">
+			  <a class="tabs__link tabs__link_active text_bold" href="#content-1">Скидки</a>
+			  <a class="tabs__link text_bold" href="#content-2">Рекомендуем</a>
+			  <a class="tabs__link text_bold" href="#content-3">Горящие туры</a>
+			</div>
+
+			<div class="tabs__content">
+
+			  <div class="tabs__pane tabs__pane_show" id="content-1">
+
+			  	<div class="container__3col">
+
+				    <div class="card card__background">
+				    	<div class="card__image">
+				    		<span class="text_bold text_large card__image-discount">
+				    			-25%
+				    		</span>
+				    		<img src="data/images/cards/pic1.jpg" alt="Олина гостиница" />
+				    	</div>
+				    	<div class="card__background_content">
+				    		<h5>Олина гостиница</h5>
+				    		<div class="card__prices"><span class="text_normal text_bold card__price-grey">От</span> <span class="text_normal text_bold card__price-red">25 000 ₽</span> <div class="card__price-old"><p class="text_xsmall text_bold">31 000 ₽</p> <div class="redline"> </div></div>
+				    		</div>
+				    		<span class="text_small card__location">Геленджик, голубая бухта</span>
+
+				    		<a href="#" class="text_small text_bold link_icon_right card__link">Подробнее</a>
+				    	</div>
+				    </div>
+
+				    <div class="card card__background">
+				    	<div class="card__image">
+				    		<span class="text_bold text_large card__image-discount">
+				    			-25%
+				    		</span>
+				    		<img src="data/images/cards/pic1.jpg" alt="Олина гостиница" />
+				    	</div>
+				    	<div class="card__background_content">
+				    		<h5>Олина гостиница</h5>
+				    		<div class="card__prices"><span class="text_normal text_bold card__price-grey">От</span> <span class="text_normal text_bold card__price-red">25 000 ₽</span> <div class="card__price-old"><p class="text_xsmall text_bold">31 000 ₽</p> <div class="redline"> </div></div>
+				    		</div>
+				    		<span class="text_small card__location">Геленджик, голубая бухта</span>
+
+				    		<a href="#" class="text_small text_bold link_icon_right card__link">Подробнее</a>
+				    	</div>
+				    </div>
+
+				    <div class="card card__background">
+				    	<div class="card__image">
+				    		
+				    		<img src="data/images/cards/pic1.jpg" alt="Олина гостиница" />
+				    	</div>
+				    	<div class="card__background_content">
+				    		<h5>Олина гостиница</h5>
+				    		<div class="card__prices"><span class="text_normal text_bold card__price-grey">От</span> <span class="text_normal text_bold card__price-red">25 000 ₽</span> <div class="card__price-old"><p class="text_xsmall text_bold">31 000 ₽</p> <div class="redline"> </div></div>
+				    		</div>
+				    		<span class="text_small card__location">Геленджик, голубая бухта</span>
+
+				    		<a href="#" class="text_small text_bold link_icon_right card__link">Подробнее</a>
+				    	</div>
+				    </div>
+
+				    <div class="card card__background">
+				    	<div class="card__image">
+				    		
+				    		<img src="data/images/cards/pic1.jpg" alt="Олина гостиница" />
+				    	</div>
+				    	<div class="card__background_content">
+				    		<h5>Олина гостиница</h5>
+				    		<div class="card__prices"><span class="text_normal text_bold card__price-grey">От</span> <span class="text_normal text_bold card__price-red">25 000 ₽</span> <div class="card__price-old"><p class="text_xsmall text_bold">31 000 ₽</p> <div class="redline"> </div></div>
+				    		</div>
+				    		<span class="text_small card__location">Геленджик, голубая бухта</span>
+
+				    		<a href="#" class="text_small text_bold link_icon_right card__link">Подробнее</a>
+				    	</div>
+				    </div>
+
+				    <div class="card card__background">
+				    	<div class="card__image">
+				    		
+				    		<img src="data/images/cards/pic1.jpg" alt="Олина гостиница" />
+				    	</div>
+				    	<div class="card__background_content">
+				    		<h5>Олина гостиница</h5>
+				    		<div class="card__prices"><span class="text_normal text_bold card__price-grey">От</span> <span class="text_normal text_bold card__price-red">25 000 ₽</span> <div class="card__price-old"><p class="text_xsmall text_bold">31 000 ₽</p> <div class="redline"> </div></div>
+				    		</div>
+				    		<span class="text_small card__location">Геленджик, голубая бухта</span>
+
+				    		<a href="#" class="text_small text_bold link_icon_right card__link">Подробнее</a>
+				    	</div>
+				    </div>
+
+				</div>
+			  </div>
+
+			  <div class="tabs__pane" id="content-2">
+			    Содержимое 2...
+			  </div>
+
+			  <div class="tabs__pane" id="content-3">
+			    Содержимое 3...
+			  </div>
+
+			</div>
+		</div>
+
+		<div class="pages">
+			<a href="#" class="pages_prev-inactive"> </a>
+			<p class="text_bold text_large">01 / 05</p>
+			<a href="#" class="pages_next"> </a>
+		</div>
+	</section>
+
+	<section class="container container__content banners">
+		<div class="banners__2col-banner banners__2col-banner_first">
+
+			<h4>Скидки на автобусные туры на черное море 2021!</h4>
+			<button class="button button__small banners__button">Подробнее</button>
+		</div>
+
+		<div class="banners__2col-banner banners__2col-banner_second">
+			<h4>Транспортные услуги от Гольфстрим</h4>
+			<button class="button button__small banners__button">Подробнее</button>
+		</div>
+
+		<div class="banners__2col-banner banners__2col-banner_long">
+			<h4>Бонусная программа</br>для агентств</h4>
+			<button class="button button__small banners__button">Подробнее</button>
+		</div>
+	</section>
+
+	<section class="container container__content">
+		<div class="container__title">
+			<h3>Новости</h3>
+			<p class="text_large">Новости туризма и компании. Тут текст надо написать хороший</p>
+		</div>
+
+		<div class="container__3col">
+			<div class="card">
+		    	<div class="card__image">
+		    		<img src="data/images/cards/card_news1.jpg" alt="Новость" />
+		    	</div>
+		    	<div class="card__content">
+		    		<h5>Туры в Абхазию на автобусе</h5>
+		    		<p class="text_normal">Пляжи под Сухумом или в Пицунде отлично подходят для отдыха с детьми. Изучите руины подводного города Диоскуриада, пройдите по мостику "над пропастью" в Новоафонск..</p>
+		    		<a href="#" class="text_small text_bold link_icon_right card__link">Читать далее</a>
+		    	</div>
+		    </div>
+
+			<div class="card">
+		    	<div class="card__image">
+		    		<img src="data/images/cards/card_news1.jpg" alt="Новость" />
+		    	</div>
+		    	<div class="card__content">
+		    		<h5>Туры в Абхазию на автобусе</h5>
+		    		<p class="text_normal">Пляжи под Сухумом или в Пицунде отлично подходят для отдыха с детьми. Изучите руины подводного города Диоскуриада, пройдите по мостику "над пропастью" в Новоафонск..</p>
+		    		<a href="#" class="text_small text_bold link_icon_right card__link">Читать далее</a>
+		    	</div>
+		    </div>
+
+			<div class="card">
+		    	<div class="card__image">
+		    		<img src="data/images/cards/card_news1.jpg" alt="Новость" />
+		    	</div>
+		    	<div class="card__content">
+		    		<h5>Туры в Абхазию на автобусе</h5>
+		    		<p class="text_normal">Пляжи под Сухумом или в Пицунде отлично подходят для отдыха с детьми. Изучите руины подводного города Диоскуриада, пройдите по мостику "над пропастью" в Новоафонск..</p>
+		    		<a href="#" class="text_small text_bold link_icon_right card__link">Читать далее</a>
+		    	</div>
+		    </div>
+
+			<div class="card">
+		    	<div class="card__image">
+		    		<img src="data/images/cards/card_news1.jpg" alt="Новость" />
+		    	</div>
+		    	<div class="card__content">
+		    		<h5>Туры в Абхазию на автобусе</h5>
+		    		<p class="text_normal">Пляжи под Сухумом или в Пицунде отлично подходят для отдыха с детьми. Изучите руины подводного города Диоскуриада, пройдите по мостику "над пропастью" в Новоафонск..</p>
+		    		<a href="#" class="text_small text_bold link_icon_right card__link">Читать далее</a>
+		    	</div>
+		    </div>
+
+			<div class="card">
+		    	<div class="card__image">
+		    		<img src="data/images/cards/card_news1.jpg" alt="Новость" />
+		    	</div>
+		    	<div class="card__content">
+		    		<h5>Туры в Абхазию на автобусе</h5>
+		    		<p class="text_normal">Пляжи под Сухумом или в Пицунде отлично подходят для отдыха с детьми. Изучите руины подводного города Диоскуриада, пройдите по мостику "над пропастью" в Новоафонск..</p>
+		    		<a href="#" class="text_small text_bold link_icon_right card__link">Читать далее</a>
+		    	</div>
+		    </div>
+
+			<div class="card">
+		    	<div class="card__image">
+		    		<img src="data/images/cards/card_news1.jpg" alt="Новость" />
+		    	</div>
+		    	<div class="card__content">
+		    		<h5>Туры в Абхазию на автобусе</h5>
+		    		<p class="text_normal">Пляжи под Сухумом или в Пицунде отлично подходят для отдыха с детьми. Изучите руины подводного города Диоскуриада, пройдите по мостику "над пропастью" в Новоафонск..</p>
+		    		<a href="#" class="text_small text_bold link_icon_right card__link">Читать далее</a>
+		    	</div>
+		    </div>
+
+			<div class="card">
+		    	<div class="card__image">
+		    		<img src="data/images/cards/card_news1.jpg" alt="Новость" />
+		    	</div>
+		    	<div class="card__content">
+		    		<h5>Туры в Абхазию на автобусе</h5>
+		    		<p class="text_normal">Пляжи под Сухумом или в Пицунде отлично подходят для отдыха с детьми. Изучите руины подводного города Диоскуриада, пройдите по мостику "над пропастью" в Новоафонск..</p>
+		    		<a href="#" class="text_small text_bold link_icon_right card__link">Читать далее</a>
+		    	</div>
+		    </div>
+
+			<div class="card">
+		    	<div class="card__image">
+		    		<img src="data/images/cards/card_news1.jpg" alt="Новость" />
+		    	</div>
+		    	<div class="card__content">
+		    		<h5>Туры в Абхазию на автобусе</h5>
+		    		<p class="text_normal">Пляжи под Сухумом или в Пицунде отлично подходят для отдыха с детьми. Изучите руины подводного города Диоскуриада, пройдите по мостику "над пропастью" в Новоафонск..</p>
+		    		<a href="#" class="text_small text_bold link_icon_right card__link">Читать далее</a>
+		    	</div>
+		    </div>
+
+		    </div>
+
+		    <div class="container__footer-right">
+    		    <button class="button button__small">Все новости</button>
+    		</div>
+	</section>
+
+	<footer>
+		<div class="footer__container">
+			<div class="footer__links">
+				<div class="footer__column">
+					<h6>Автобусные туры</h6>
+
+					<a href="#">Акции</a>
+					<a href="#">Аренда автобуса в НН</a>
+					<a href="#">Билеты на автобус</a>
+					<a href="#">Отправление</a>
+					<a href="#">Где купить</a>
+
+					<button class="button button__slim">Каталог туров</button>
+				</div>
+
+				<div class="footer__column">
+					<h6>Экскурсии</h6>
+
+					<a href="#">Экскурсии для школьников</a>
+					<a href="#">Событийные туры</a>
+					<a href="#">Загородные экскурсии</a>
+					<a href="#">Прием в Нижнем Новгорде</a>
+					<a href="#">Санкт-Петербург</a>
+					<a href="#">Москва</a>
+					<a href="#">Беларусь</a>
+					<a href="#">Казань</a>
+				</div>
+
+				<div class="footer__column">
+					<h6>Программы</h6>
+
+					<a href="#">Новогодние программы</a>
+					<a href="#">Новогодние экскурсии по НН</a>
+					<a href="#">Свадебные путешествия</a>
+					<a href="#">Лечение за границей</a>
+				</div>
+
+				<div class="footer__column">
+					<h6>Информация</h6>
+
+					<a href="#">О компании</a>
+					<a href="#">Контакты</a>
+					<a href="#">Юридическая информация</a>
+					<a href="#">Агентствам</a>
+				</div>
+			</div>
+
+			<div class="footer__info">
+				<div class="footer__column">
+					<h6>Головной офис (Автозавод)</h6>
+
+					<p class="text_normal">пр. Кирова, 1</p>
+					<a href="#">+7-831-230-34-35</a>
+					<a href="#">+7-831-230-34-36</a>
+				</div>
+
+				<div class="footer__column footer__column_info">
+					<a href="#">
+						<img src="data/images/main/icons/vk_footer.svg" />
+						https://vk.com/gs_tur
+					</a>
+					<a href="#">
+						<img src="data/images/main/icons/instagram_footer.svg" />
+						@golfstrim_nn
+					</a>
+				</div>
+
+				<div class="footer__column footer__column_copyright">
+					<p class="text_normal">Copyright © 2009-2021 Гольфстрим — туристическая компания в Нижнем Новгороде</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script>
+		var $tabs = function (target) {
+		  var
+		    _elemTabs = (typeof target === 'string' ? document.querySelector(target) : target),
+		    _eventTabsShow,
+		    _showTab = function (tabsLinkTarget) {
+		      var tabsPaneTarget, tabsLinkActive, tabsPaneShow;
+		      tabsPaneTarget = document.querySelector(tabsLinkTarget.getAttribute('href'));
+		      tabsLinkActive = tabsLinkTarget.parentElement.querySelector('.tabs__link_active');
+		      tabsPaneShow = tabsPaneTarget.parentElement.querySelector('.tabs__pane_show');
+		      // если следующая вкладка равна активной, то завершаем работу
+		      if (tabsLinkTarget === tabsLinkActive) {
+		        return;
+		      }
+		      // удаляем классы у текущих активных элементов
+		      if (tabsLinkActive !== null) {
+		        tabsLinkActive.classList.remove('tabs__link_active');
+		      }
+		      if (tabsPaneShow !== null) {
+		        tabsPaneShow.classList.remove('tabs__pane_show');
+		      }
+		      // добавляем классы к элементам (в завимости от выбранной вкладки)
+		      tabsLinkTarget.classList.add('tabs__link_active');
+		      tabsPaneTarget.classList.add('tabs__pane_show');
+		      document.dispatchEvent(_eventTabsShow);
+		    },
+		    _switchTabTo = function (tabsLinkIndex) {
+		      var tabsLinks = _elemTabs.querySelectorAll('.tabs__link');
+		      if (tabsLinks.length > 0) {
+		        if (tabsLinkIndex > tabsLinks.length) {
+		          tabsLinkIndex = tabsLinks.length;
+		        } else if (tabsLinkIndex < 1) {
+		          tabsLinkIndex = 1;
+		        }
+		        _showTab(tabsLinks[tabsLinkIndex - 1]);
+		      }
+		    };
+
+		  _eventTabsShow = new CustomEvent('tab.show', { detail: _elemTabs });
+
+		  _elemTabs.addEventListener('click', function (e) {
+		    var tabsLinkTarget = e.target;
+		    // завершаем выполнение функции, если кликнули не по ссылке
+		    if (!tabsLinkTarget.classList.contains('tabs__link')) {
+		      return;
+		    }
+		    // отменяем стандартное действие
+		    e.preventDefault();
+		    _showTab(tabsLinkTarget);
+		  });
+
+		  return {
+		    showTab: function (target) {
+		      _showTab(target);
+		    },
+		    switchTabTo: function (index) {
+		      _switchTabTo(index);
+		    }
+		  }
+
+		};
+
+		$tabs('.tabs');
+	</script>
 
 </body>
 </html>
