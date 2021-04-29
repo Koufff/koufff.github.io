@@ -1870,12 +1870,16 @@ li {
 }
 
 .modal_close {
-	width: 34px;
-	height: 34px;
-	display: block;
-	position: absolute;
-	top: 32px;
-	right: 32px;
+	width: 6%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.modal_close {
+	max-width: 100%;
 }
 
 .modal_close svg path {
@@ -2397,6 +2401,10 @@ li {
 	}
 	.tabs__link:last-child {
 		margin-right: 0;
+	}
+	.tabs__link:not(.tabs__link_active):hover,
+	.tabs__link:not(.tabs__link_active):focus {
+		background: none;
 	}
 	.tabs__link_active {
 	    color: #02657C;
