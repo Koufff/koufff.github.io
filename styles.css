@@ -304,6 +304,7 @@ input[type="password"]:focus {
 	display: block;
 	width: 161px;
 	height: 50px;
+	position: relative;
 }
 
 .hello-display {
@@ -333,14 +334,14 @@ input[type="password"]:focus {
 	align-content: center;
 	padding-bottom: 1rem;
 	background: linear-gradient(180deg, rgba(2, 101, 124, 0.6) 8%, rgba(113, 113, 113, 0) 19.56%), url(data/images/about-background.jpg) no-repeat;
-	background-size: 100%;
+	background-position: center;
 	min-height: 760px;
 	color: #ffffff;
 	margin-bottom: 96px;
 }
 
 .about-display__textarea {
-	width: 690px;
+
 	display: block;
 	margin: 24px 0 72px 0;
 }
@@ -425,7 +426,7 @@ header {
 .header-white {
 	width: 100%;
 	position: relative;
-	height: 92px;
+	height: auto;
 	background: #fff;
 	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
 	margin-bottom:  32px;
@@ -475,7 +476,17 @@ header {
 	opacity: 1;
 }
 
+.header__menu-white a:hover .header__menu-border {
+	width: 100%;
+	opacity: 1;
+}
+
 .logo:hover .header__menu-logo-border {
+	width: 77%;
+	opacity: 1;
+}
+
+.logo-white:hover .header__menu-logo-border {
 	width: 77%;
 	opacity: 1;
 }
@@ -495,7 +506,6 @@ header {
 	position: relative;
 	text-decoration: none;
 	display: block;
-	overflow: hidden;
 	color: #121212;
 	font-weight: 700;
 	margin-right: 24px;
@@ -615,7 +625,6 @@ header {
 
 .tabs {
 	max-width: 100%;
-	margin-top: 4rem;
 }
 
 .tabs__nav {
@@ -668,6 +677,7 @@ header {
 
 .tabs__pane_show {
 	display: flex;
+	flex-direction: column;
 }
 
 .tabs-menu {
@@ -799,6 +809,12 @@ header {
 	grid-template-columns: 30% 1fr;
 	grid-template-rows: 1fr;
 	grid-gap: 69px;
+	padding-bottom: 32px;
+	margin-top: 32px;
+	border-bottom: 1px solid #D0D0D0;
+}
+.container__2colwiki:first-child {
+	margin-top: 0;
 }
 
 .container__2colwiki_first {
@@ -826,9 +842,33 @@ header {
 	grid-gap: 24px;
 }
 
+.bus_ticket_href {
+	display: flex;
+	text-decoration: none;
+	color: inherit;
+}
+.bus_ticket_href:hover {
+	text-decoration: none;
+}
+.bus_ticket_href:hover h5 {
+	color: #02657C;
+}
+
+.bus_ticket_href img {
+    -moz-transition: .2s all;
+    -webkit-transition: .2s all;
+    -o-transition: .2s all;
+    transition: .2s all;
+}
+
+.bus_ticket_href:hover img {
+	box-shadow: 0px 0px 0px 6px rgba(2, 101, 124, 0.1);
+}
+
 .bus_ticket__pic {
 	width: 100%;
-	display: block;
+	display: flex;
+	align-items: flex-start;
 }
 
 .bus_ticket__pic img {
@@ -870,7 +910,10 @@ header {
 }
 
 .container__2parts {
-	grid-gap: 156px;
+	grid-gap: 72px;
+	grid-template-columns: 1fr 50%;
+	display: grid;
+	margin-bottom: 24px
 }
 
 .card__background_content {
@@ -1238,7 +1281,17 @@ footer a {
 .content__title {
 	display: flex;
 	flex-direction: column;
-	
+}
+
+.content__pic {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+}
+
+.content__pic img {
+	max-width: 100%;
+	border-radius: 24px;
 }
 
 .content__title-center {
@@ -1364,12 +1417,17 @@ li {
 
 .content__part_halftitle {
 	width: 60%;
+	margin-bottom: 24px;
 }
 
 .content__part-image {
 	margin: 96px 0 56px 0;
 	display: flex;
 	justify-content: center;
+}
+
+.content__part-image img {
+	max-width: 100%;
 }
 
 .navigation-pages {
@@ -1395,6 +1453,7 @@ li {
 	grid-template-columns: auto auto;
 	grid-template-rows: auto auto auto;
 	grid-gap: 40px;
+	margin-top: 24px;
 }
 
 .team__member {
@@ -1451,6 +1510,13 @@ li {
 	align-items: center;
 	justify-content: space-between;
 
+}
+
+.map-big {
+	overflow: hidden;
+    width: 100%;
+    border-radius: 24px;
+    display: flex;
 }
 
 .schedule__dates-mounth {
@@ -1548,7 +1614,7 @@ li {
 
 .content__2column {
 	display: grid;
-    grid-template-columns: 58% auto;
+    grid-template-columns: 50% auto;
     grid-template-rows: auto;
     grid-gap: 64px;
 }
@@ -1557,7 +1623,14 @@ li {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	align-items: stretch;
+	align-items: center;
+}
+
+.slider_arrow:first-child {
+	margin-bottom: 12px;
+}
+.slider_arrow:last-child {
+	margin-top: 12px;
 }
 
 .content__slider__allphotos {
@@ -2036,6 +2109,60 @@ li {
   opacity: 0;
 }
 
+.select-info__progs {
+	display: flex;
+	flex-direction: column;
+}
+
+.select-info__progs ul {
+	margin-top: 12px;
+}
+#select-city .select, #select-city2 .select {
+	margin-bottom: 16px;
+}
+.select-info {
+	display: flex;
+	margin-bottom: 24px;
+}
+.select-info__block {
+	display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    width: 100%;
+}
+.select-info__el {
+	margin-right: 30%;
+}
+.select-info__el p {
+	margin-top: 8px;
+}
+.container__2colwiki_info {
+	display: flex;
+	flex-direction: column;
+	margin-top: 12px;
+}
+.info__block {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+}
+.info__block h5 {
+	margin-bottom: 24px;
+}
+.info__block ul {
+	margin-top: 0;
+}
+.info__block ul li {
+	margin-bottom: 4px;
+}
+.info__block ul li:last-child {
+	margin-bottom: 0;
+}
+.info__prices span {
+	display: inline-block;
+	width: 124px;
+}
+
 @media (max-width: 1536px) {
 	.container {
 		width: 100%;
@@ -2155,6 +2282,58 @@ li {
 }
 
 @media (max-width: 1320px) {
+	.content__2column {
+		grid-gap: 32px;
+	}
+	.content__2column-first {
+	    flex-direction: column-reverse;
+	    justify-content: flex-end;
+	    align-items: center;
+	}
+
+	.content__slider__allphotos {
+	    flex-direction: row;
+	    align-items: center;
+	    justify-content: space-between;
+	    margin-right: 0;
+	    width: 100%;
+	    margin-top: 32px;
+	}
+
+	.slider_arrow {
+		transform: rotate(-90deg);
+	}
+	.slider_arrow img {
+		max-width: 100%;
+	}
+	.slider_arrow:first-child {
+		margin-right: 12px;
+		margin-bottom: 0;
+	}
+	.slider_arrow:last-child {
+		margin-left: 12px;
+		margin-top: 0;
+	}
+
+	.content__slider__allphotos-mini {
+	    display: flex;
+	    flex-direction: row;
+	    flex: 1 1 100%;
+	    justify-content: space-around;
+	}
+
+	.content__slider__allphotos-mini a {
+		margin-right: 24px;
+	}
+
+	.content__slider__allphotos-mini a:last-child {
+		margin-right: 0;
+	}
+
+	.content__slider__allphotos-mini a img {
+		max-width: 100%;
+		margin: 0;
+	}
 
 	.hello-display {
 	    background: linear-gradient(180deg, rgba(2, 101, 124, 0.6) 8%, rgba(113, 113, 113, 0) 42%), url(data/images/hello-background.jpg) no-repeat;
@@ -2165,9 +2344,15 @@ li {
     	order: 2;
 	}
 
+	.header__menu-white {
+    	margin: 48px auto 0;
+    	order: 2;
+	}
+
 	.header__rightmenu {
 		order: 1;
 		margin-left: 4rem;
+		margin-top: 0;
 	}
 
 	.search-web__button {
@@ -2197,12 +2382,28 @@ li {
 		margin: 0;
 	}
 
+	.header__menu-white {
+		width: 100%;
+		justify-content: space-between;
+	}
+	.header__menu-white a {
+		margin: 0;
+	}
+
 	.container__content {
 		margin-bottom: 64px;
+	}
+
+	.container-sixcards {
+	    grid-template-rows: 250px 250px 250px;
+	    grid-template-columns: auto auto;
 	}
 }
 
 @media (max-width: 1170px) {
+	.tabs__link {
+	    padding: 20px 32px;
+	}
 	.banners {
 		grid-gap: 24px;
 	}
@@ -2225,6 +2426,14 @@ li {
 }
 
 @media (max-width: 1040px) {
+
+	.container__2colwiki {
+		grid-gap: 32px;
+	}
+	.container-946px {
+		width: 100%;
+		padding: 0 48px;
+	}
 	.container__modal__tours {
     	grid-gap: 24px 24px;
 	}
@@ -2416,18 +2625,15 @@ li {
     	padding: 0 0 0 24px;
     }
 
-    .tabs {
-    	margin-top: 2rem;
-    }
-
     .tabs__nav {
     	border-bottom: 3px solid #02657C;
     }
 
     .tabs__link {
-    	padding: 16px 32px;
+    	padding: 16px 24px;
     	border: 3px solid #02657C;
     	border-bottom: 0;
+    	font-size: 87%;
     }
 
     .container__3col {
@@ -2445,10 +2651,17 @@ li {
 	.container__title h3 {
    		margin-bottom: 8px;
 	}
+
+	.container__2parts {
+		grid-template-columns: 1fr 50%;
+	}
 }
 
 @media (max-width: 830px) {
-
+	.container-sixcards {
+    	grid-template-rows: 250px 250px 250px 250px 250px 250px;
+    	grid-template-columns: auto;
+	}
 
 	.tabs-menu__nav {
 		display: flex;
@@ -2460,40 +2673,44 @@ li {
 	.tabs-menu__link {
 		flex: 0 0 auto;
 	}
+
+	.bus_ticket {
+		display: grid;
+		grid-template-columns: 15% auto;
+		grid-auto-rows: 1fr;
+		grid-gap: 24px;
+	}
+
+	.container__bus_ticket{
+		grid-template-columns: 1fr;
+    	grid-template-rows: 1fr;
+	}
+
+	.content__2column {
+		grid-template-columns: 100%;
+	}
 }
 
-
-@media (max-width: 700px) {
-	.cards-tours {
-	    grid-template-columns: 1fr;
-	    grid-template-rows: 200px 200px 200px;
-	    grid-gap: 16px;
+@media (max-width: 800px) {
+	.content__part {
+		margin-top: 24px;
 	}
-	.header__menu {
-		display: none;
+	.container__2colwiki {
+		grid-template-columns: 45% 1fr;
 	}
-
-	.hello-display__textarea {
-    	width: auto;
-    }
-
-    .search-web {
+	.content__2col {
+    	grid-template-columns: 210px auto;
+	}
+	.content__part_halftitle {
     	width: 100%;
-    }
-
-	.cards-tours__header {
+	}
+	.banner {
+		height: 250px;
 		flex-direction: column;
 	}
-
-	.cards-tours__header span {
-		margin: 0 0 24px 0;
+	.tabs__content {
+    	padding: 3rem 0 2rem 0;
 	}
-	.modal__tours_content {
-		margin-top: 16px;
-	}
-}
-
-@media (max-width: 610px) {
 
 	.tabs-menu {
 		margin-top: 32px;
@@ -2503,6 +2720,7 @@ li {
 	    padding: 16px 0px;
 	    border: 0;
 	    margin-right: 48px;
+	    font-size: 100%;
 	}
 	.tabs__link:last-child {
 		margin-right: 0;
@@ -2524,6 +2742,106 @@ li {
 		padding: 32px 0;
 	}
 
+	.tabs__nav {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.tabs__link {
+		flex: 0 0 auto;
+	}
+
+	.tabs__link:hover {
+		background: none;
+	}
+
+	.container__2parts {
+		grid-template-columns: 100%;
+	}
+}
+
+@media (max-width: 700px) {
+	.container__2colwiki {
+    	grid-template-columns: 1fr;
+	}
+	.cards-tours {
+	    grid-template-columns: 1fr;
+	    grid-template-rows: 200px 200px 200px;
+	    grid-gap: 16px;
+	}
+	.header__menu {
+		display: none;
+	}
+	.header__menu-white {
+		display: none;
+	}
+
+	.hello-display__textarea {
+    	width: auto;
+    }
+
+    .search-web {
+    	width: 100%;
+    }
+
+	.cards-tours__header {
+		flex-direction: column;
+	}
+
+	.cards-tours__header span {
+		margin: 0 0 24px 0;
+	}
+	.modal__tours_content {
+		margin-top: 16px;
+	}
+
+	.team {
+		grid-template-columns: auto;
+
+	}
+	.team__member {
+		flex-direction: column;
+	}
+	.team__member-name {
+		margin: 24px 0 0 0;
+		text-align: center;
+	}
+	.content__part-image {
+		margin: 48px 0 24px 0;
+	}
+
+	.request-form_contact {
+		width: 100%;
+	}
+}
+
+@media (max-width: 610px) {
+	.request-form_contact {
+		width: 100%;
+	}
+	.banner h3 {
+		font-size: 24px;
+	}
+	.banner {
+		padding: 24px;
+		justify-content: space-between;
+	}
+	.banner__button {
+    	position: relative;
+    	right: 0;
+    	left: 0;
+    	bottom: 0;
+	}
+	.bus_ticket {
+    	grid-gap: 16px;
+	}
+	.bus_ticket__pic img {
+    	border-radius: 16px;
+	}
+
+
 	.footer__info {
     	flex-wrap: wrap;
 	}
@@ -2537,6 +2855,7 @@ li {
 	}
 	.container__header {
 		padding-top: 16px;
+		padding-bottom: 16px;
 	}
 
     .banners__2col-banner h4, .banners__2col-banner h3 {
@@ -2571,20 +2890,7 @@ li {
 		margin-bottom: 56px;
 	}
 
-	.tabs__nav {
-		display: flex;
-		flex-wrap: nowrap;
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-	}
 
-	.tabs__link {
-		flex: 0 0 auto;
-	}
-
-	.tabs__link:hover {
-		background: none;
-	}
 
 	.mobile-container-scroll {
 		display: flex;
@@ -2623,6 +2929,27 @@ li {
 }
 
 @media (max-width: 488px) {
+	.container__2parts {
+		grid-template-columns: 100%;
+	}
+	.content__2col {
+    	grid-template-columns: auto;
+	}
+
+	.bus_ticket__pic {
+    	margin-bottom: 24px;
+	}
+	.bus_ticket {
+    	grid-gap: 0;
+   	 	grid-template-columns: auto;
+   	 	grid-template-rows: 1fr 96px;
+	}
+	.bus_ticket__content-title h5 {
+		margin: 0;
+	}
+	.bus_ticket__content-title p {
+		margin: 0;
+	}
 	.container__modal__tours {
     	grid-gap: 24px 0;
 	}
@@ -2634,6 +2961,16 @@ li {
     	background-image: url(data/images/main/logo-white-mini.svg);
     	width: 33px;
     	height: 50px;
+    }
+
+	.logo-white {
+    	background-image: url(data/images/main/logo-black-mini.svg);
+    	width: 33px;
+    	height: 50px;
+    }
+
+    .container-946px {
+    	padding: 0 24px;
     }
 }
 @media(max-width: 400px) {

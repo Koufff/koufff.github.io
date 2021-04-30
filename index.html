@@ -8,7 +8,6 @@
 	<script src="data/scripts/vue.js"></script>
 </head>
 <body>
-	<!--
 	<div class="preloader" id="preloader">
 		<svg width="151" height="150" class="preloader-image" viewBox="0 0 151 150" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<g clip-path="url(#clip0)">
@@ -29,8 +28,8 @@
 			<ellipse cx="61.9143" cy="11" rx="61.9143" ry="11" fill="#F4F4F4"/>
 		</svg>
 	</div>
-	-->
 
+	<!-- HEAD BAR -->
 	<header>
 		<div class="container container__header">
 
@@ -101,7 +100,7 @@
 
 										<h6>Геленджик, Голубая бухта, Кабардинка, Архипо-Осиповка</h6> <div> </div>
 										<div class="container__2col container__modal__tours">
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -124,7 +123,7 @@
 												</div>
 											</a>
 
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -147,7 +146,7 @@
 												</div>
 											</a>
 
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -170,7 +169,7 @@
 												</div>
 											</a>
 
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -193,7 +192,7 @@
 												</div>
 											</a>
 
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -219,7 +218,7 @@
 
 										<h6>Анапа, Витязево, Джемете</h6>
 										<div class="container__2col container__modal__tours">
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -242,7 +241,7 @@
 												</div>
 											</a>
 
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -268,7 +267,7 @@
 
 										<h6>Лоо, Вардане, Дагомыс</h6>
 										<div class="container__2col container__modal__tours">
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -291,7 +290,7 @@
 												</div>
 											</a>
 
-											<a href="#" class="tours_card-modal-href">
+											<a href="hotel_full.html" class="tours_card-modal-href">
 												<div class="tours_card-modal">
 													<div class="tours_card-modal__pic">
 														<img src="data/images/hotel_pic-1.jpg" />
@@ -660,6 +659,7 @@
 									</div>
 								</div>
 								</transition>
+								<!-- /Модальное окно -->
 
 								<div class="tabs-menu">
 
@@ -700,20 +700,32 @@
 										<template v-if="tab == 1">
 											<div class="tabs-menu__pane tabs-menu__pane_show">
 									  			<div class="container container__hamburger">
-									  				<a class="tabs-menu__el" href="#">
+									  				<a class="tabs-menu__el" href="stock.html">
 									  					<p class="text_bold">Акции</p>
 									  				</a>
 
-									  				<a class="tabs-menu__el" href="#">
+									  				<a class="tabs-menu__el" href="rent_bus.html">
 									  					<p class="text_bold">Аренда автобуса в НН</p>
 									  				</a>
 
-									  				<a class="tabs-menu__el" href="#">
+									  				<a class="tabs-menu__el" href="bus_tickets.html">
 									  					<p class="text_bold">Билеты на автобус</p>
 									  				</a>
 
-									  				<a class="tabs-menu__el" href="#">
+									  				<a class="tabs-menu__el" href="deliverence.html">
 									  					<p class="text_bold">Отправление</p>
+									  				</a>
+
+									  				<a class="tabs-menu__el" href="new_year.html">
+									  					<p class="text_bold">Новый год</p>
+									  				</a>
+
+									  				<a class="tabs-menu__el" href="gdekupit.html">
+									  					<p class="text_bold">gdekupit</p>
+									  				</a>
+
+									  				<a class="tabs-menu__el" href="toagency.html">
+									  					<p class="text_bold">toagency</p>
 									  				</a>
 									  			</div>
 											</div>
@@ -724,11 +736,11 @@
 										<template v-if="tab == 2">
 											<div class="tabs-menu__pane tabs-menu__pane_show">
 								  				<div class="container container__hamburger">
-									  				<a class="tabs-menu__el" href="#">
+									  				<a class="tabs-menu__el" href="excursion_tours.html">
 									  					<p class="text_bold">Эксурсионные туры</p>
 									  				</a>
 
-									  				<a class="tabs-menu__el" href="#">
+									  				<a class="tabs-menu__el" href="excursion-nn.html">
 									  					<p class="text_bold">Экскурсии по нижегородской области</p>
 									  				</a>
 
@@ -801,12 +813,10 @@
 					</div>
 					</transition>
 				</div>
-
-
 			</div>
 		</div>
 	</header>
-
+	<!-- /HEADER BAR -->
 
 	<section class="hello-display">
 		<div class="container container__column-center">
@@ -894,7 +904,7 @@
 	</section>
 
 	<section class="container container__content">
-		<h3 class="container__content-title"> Актуальные предложения туров </h3>
+		<h3 class="container__title"> Актуальные предложения туров </h3>
 
 		<div class="tabs">
 
@@ -1204,7 +1214,6 @@
 		</div>
 	</footer>
 
-	<!--
 	<script>
 		const preloader = document.getElementById('preloader');
 		document.body.style['overflow-y'] = 'hidden';
@@ -1215,7 +1224,6 @@
 			}, 2500);
 		});
 	</script>
-	-->
 	<script type="text/javascript">
 		new Vue({
 			el: '#modal__tours',
@@ -1343,8 +1351,5 @@
 
 		$tabs('.tabs');
 	</script>
-
-
-
 </body>
 </html>
