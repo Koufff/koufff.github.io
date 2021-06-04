@@ -1,154 +1,113 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Игра жызнб</title>
-    <link type="text/CSS" rel="stylesheet" href="styles.css" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <section class="wrapper" id="header">
-      <h3>Игра жизнь</h3>
-    </section>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<title>Форма обратной связи</title>
+ <link rel="shortcut icon" href="favicon.png" type="image/png">
+ <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+ <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+ <script type="text/javascript">
+jQuery(function($){
+   $("#phone").mask("+7 (999) 999-9999");
+   $("#phone2").mask("+7 (999) 999-9999");
+});
+</script>
+</head>
+<body>
 
-    <section class="wrapper" id="content">
-      <aside class="wrapper__leftside">
-        <div class="col-2fr">
-          <button id="start">Старт</button>
-          <button id="randomSeed">Рандом</button>
-        </div>
-        <div class="all-stats">
-          <div class="stat">
-            <p>Итерация:</p>
-            <span id="count" style="color: #8854aa">0</span>
-          </div>
-          <div class="stat">
-            <p>Живых клеток:</p>
-            <span id="alifeCount" style="color: #1ac044">0</span>
-          </div>
-          <div class="stat">
-            <p>Мутаций:</p>
-            <span id="count" style="color: #ff3c00">0</span>
-          </div>
-        </div>
-      </aside>
+<!-- begin content  -->
+<div class="content clearfix">
+  <!-- begin post  -->
+  <div class="post">
+    <h1>Форма обратной связи</h1>
+    <p class="description">
+      Но Маск считает, что все как раз наоборот. У нас есть способ добраться до Марса за астрономическую сумму денег. Но нет способа колонизировать Марс. По мнению Маска, нам не хватает возможности добраться до Марса по доступной цене. Он называет США «народом исследователей» и «чистым духом жажды исследований» и верит, что если бы Марс был дешевле, появилось бы больше желающих туда отправиться. Но поскольку все это даже и близко не выглядит возможным, никто об этом не говорит, и воля людей отправиться на Марс пребывает в спячке.
+    </p>
 
-      <canvas id="field" width="300" height="300"> </canvas>
-    </section>
+<div id="inline">
+  <h2>Онлайн заявка</h2>
+  <form id="contact" name="contact" action="#" method="post">
+    <input type="name" id="name" name="name" class="txt" placeholder="Ваше имя">
+    <input type="phone" id="phone" name="phone" class="txt" placeholder="Ваш телефон">
+    <input type="email" id="email" name="email" class="txt" placeholder="Ваш e-mail"> 
+    <textarea id="msg" name="msg" class="txtarea"  placeholder="Ваше сообщение:"></textarea>
+    <button id="send">Отправить</button>
+  </form>
+</div>
 
-    <script type="text/javascript">
-      var canvas = document.getElementById("field");
-      var ctx = canvas.getContext("2d");
-      var mas = [];
-      var count = 0;
-      var alifeCount = 0;
-      var timer;
 
-      canvas.onclick = function (event) {
-        var x = event.offsetX;
-        var y = event.offsetY;
-        x = Math.floor(x / 10); //300 / 10 = 30
-        y = Math.floor(y / 10);
-        console.log(x);
-        console.log(y);
-        if (mas[y][x] == 1) {
-          mas[y][x] = 0;
-        } else {
-          mas[y][x] = 1;
-        }
-        drawField();
-        count = 1;
-      };
+<div style="margin:30px 0;">
+По материалам сайта <a href="http://seoblognik.ru">Seoblognik.ru</a>
+</div>
 
-      function goLife() {
-        var n = 30,
-          m = 30;
-        for (var i = 0; i < m; i++) {
-          mas[i] = [];
-          for (var j = 0; j < n; j++) {
-            mas[i][j] = 0;
-          }
-        }
+</div>
+<!-- end post -->
+	<!-- end content -->
+
+
+<script type="text/javascript">
+  function validateEmail(email) { 
+    var reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return reg.test(email);
+  }
+
+  $(document).ready(function() {
+    $("#contact").submit(function() { return false; });
+    $("#send").on("click", function(){
+      var emailval  = $("#email").val();
+      var namevl  = $("#name").val();
+      var phonevl  = $("#phone").val();
+      var msgval    = $("#msg").val();
+      var msglen    = msgval.length;
+      var mailvalid = validateEmail(emailval);
+
+      if(mailvalid == false) {
+        $("#email").addClass("error");
       }
-
-      goLife();
-
-      function drawField() {
-        ctx.clearRect(0, 0, 300, 300);
-        for (var i = 0; i < 30; i++) {
-          for (var j = 0; j < 30; j++) {
-            if (mas[i][j] == 1) {
-              ctx.fillRect(j * 10, i * 10, 10, 10);
-              ctx.fillStyle = "#4D6B75";
+      else if(mailvalid == true){
+        $("#email").removeClass("error");
+      }
+  if(mailvalid == false) {
+        $("#name").addClass("error");
+      }
+      else if(mailvalid == true){
+        $("#name").removeClass("error");
+      }
+      if(mailvalid == false) {
+        $("#phone").addClass("error");
+      }
+      else if(mailvalid == true){
+        $("#phone").removeClass("error");
+      }
+      if(msglen < 4) {
+        $("#msg").addClass("error");
+      }
+      else if(msglen >= 4){
+        $("#msg").removeClass("error");
+      }
+      
+      if(mailvalid == true && msglen >= 4) {
+        // если обе проверки пройдены
+        // сначала мы скрываем кнопку отправки
+        $("#send").replaceWith("<em>отправка...</em>");
+        $.ajax({
+          type: 'POST',
+          url: 'sendmessage.php',
+          data: $("#contact").serialize(),
+          success: function(data) {
+            if(data == "true") {
+              $("#contact").fadeOut("fast", function(){
+                $(this).before("<p><strong>Успешно! Ваше сообщение отправлено  :)</strong></p>");
+                setTimeout("$.fancybox.close()", 1000);
+              });
             }
           }
-        }
+        });
       }
+    });
+  });
+</script>
 
-      function startLife() {
-        var mas2 = [];
-        var setAlifeCount = 0;
-
-        for (var i = 0; i < 30; i++) {
-          mas2[i] = [];
-          for (var j = 0; j < 30; j++) {
-            if (mas[i][j] == 1) setAlifeCount++;
-            var neighbors = 0; // Ищем соседей
-            if (mas[fpm(i) - 1][j] == 1) neighbors++; // up
-            if (mas[i][fpp(j) + 1] == 1) neighbors++; // right
-            if (mas[fpp(i) + 1][j] == 1) neighbors++; // bottom
-            if (mas[i][fpm(j) - 1] == 1) neighbors++; // left
-            if (mas[fpm(i) - 1][fpp(j) + 1] == 1) neighbors++;
-            if (mas[fpp(i) + 1][fpp(j) + 1] == 1) neighbors++;
-            if (mas[fpp(i) + 1][fpm(j) - 1] == 1) neighbors++;
-            if (mas[fpm(i) - 1][fpm(j) - 1] == 1) neighbors++;
-
-            // Стандартные правила игры жизнь
-            (neighbors == 2 || neighbors == 3) && mas[i][j] == 1
-              ? (mas2[i][j] = 1)
-              : (mas2[i][j] = 0);
-
-            if (neighbors == 3 && mas[i][j] == 0) mas2[i][j] = 1;
-          }
-        }
-        mas = mas2;
-        drawField();
-        count++;
-        document.getElementById("count").innerHTML = count;
-        alifeCount = setAlifeCount;
-        document.getElementById("alifeCount").innerHTML = alifeCount;
-        timer = setTimeout(startLife, 300);
-      }
-
-      function randomSeed() {
-        var mas2 = [];
-
-        for (var i = 0; i < 30; i++) {
-          mas2[i] = [];
-          for (var j = 0; j < 30; j++) {
-            mas2[i][j] = Math.round(Math.random());
-          }
-        }
-
-        mas = mas2;
-        drawField();
-        count = 1;
-        document.getElementById("count").innerHTML = count;
-      }
-
-      function fpm(i) {
-        // функция для тора если выходит вверх/влево за рамки
-        if (i == 0) return 30;
-        else return i;
-      }
-      function fpp(i) {
-        // функция для тора если выходит вниз/вправо за рамки
-        if (i == 29) return -1;
-        else return i;
-      }
-
-      document.getElementById("start").onclick = startLife;
-      document.getElementById("randomSeed").onclick = randomSeed;
-    </script>
-  </body>
+</body>
 </html>
