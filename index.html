@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Игра жызнб</title>
+    <link type="text/CSS" rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <section class="wrapper" id="header">
+      <h3>Игра жизнь</h3>
+    </section>
+
+    <section class="wrapper" id="content">
+      <aside class="wrapper__leftside">
+        <div class="col-2fr">
+          <button id="start">Старт</button>
+          <button id="randomSeed">Рандом</button>
+        </div>
+        <div class="all-stats">
+          <div class="stat">
+            <p>Итерация:</p>
+            <span id="count" style="color: #8854aa">0</span>
+          </div>
+          <div class="stat">
+            <p>Живых клеток:</p>
+            <span id="alifeCount" style="color: #1ac044">0</span>
+          </div>
+          <div class="stat">
+            <p>Мутаций:</p>
+            <span id="count" style="color: #ff3c00">0</span>
+          </div>
+        </div>
+      </aside>
+
+      <canvas id="field" width="300" height="300"> </canvas>
+    </section>
+
+    <script type="text/javascript">
+      var canvas = document.getElementById("field");
+      var ctx = canvas.getContext("2d");
+      var mas = [];
+      var count = 0;
+      var alifeCount = 0;
+      var timer;
+
+      canvas.onclick = function (event) {
+        var x = event.offsetX;
+        var y = event.offsetY;
+        x = Math.floor(x / 10); //300 / 10 = 30
+        y = Math.floor(y / 10);
+        console.log(x);
+        console.log(y);
+        if (mas[y][x] == 1) {
+          mas[y][x] = 0;
+        } else {
+          mas[y][x] = 1;
+        }
+        drawField();
+        count = 1;
+      };
+
+      function goLife() {
+        var n = 30,
+          m = 30;
+        for (var i = 0; i < m; i++) {
+          mas[i] = [];
+          for (var j = 0; j < n; j++) {
+            mas[i][j] = 0;
+          }
+        }
+      }
+
+      goLife();
+
+      function drawField() {
+        ctx.clearRect(0, 0, 300, 300);
+        for (var i = 0; i < 30; i++) {
+          for (var j = 0; j < 30; j++) {
+            if (mas[i][j] == 1) {
+              ctx.fillRect(j * 10, i * 10, 10, 10);
+              ctx.fillStyle = "#4D6B75";
+            }
+          }
+        }
+      }
+
+      function startLife() {
+        var mas2 = [];
+        var setAlifeCount = 0;
+
+        for (var i = 0; i < 30; i++) {
+          mas2[i] = [];
+          for (var j = 0; j < 30; j++) {
+            if (mas[i][j] == 1) setAlifeCount++;
+            var neighbors = 0; // Ищем соседей
+            if (mas[fpm(i) - 1][j] == 1) neighbors++; // up
+            if (mas[i][fpp(j) + 1] == 1) neighbors++; // right
+            if (mas[fpp(i) + 1][j] == 1) neighbors++; // bottom
+            if (mas[i][fpm(j) - 1] == 1) neighbors++; // left
+            if (mas[fpm(i) - 1][fpp(j) + 1] == 1) neighbors++;
+            if (mas[fpp(i) + 1][fpp(j) + 1] == 1) neighbors++;
+            if (mas[fpp(i) + 1][fpm(j) - 1] == 1) neighbors++;
+            if (mas[fpm(i) - 1][fpm(j) - 1] == 1) neighbors++;
+
+            // Стандартные правила игры жизнь
+            (neighbors == 2 || neighbors == 3) && mas[i][j] == 1
+              ? (mas2[i][j] = 1)
+              : (mas2[i][j] = 0);
+
+            if (neighbors == 3 && mas[i][j] == 0) mas2[i][j] = 1;
+          }
+        }
+        mas = mas2;
+        drawField();
+        count++;
+        document.getElementById("count").innerHTML = count;
+        alifeCount = setAlifeCount;
+        document.getElementById("alifeCount").innerHTML = alifeCount;
+        timer = setTimeout(startLife, 300);
+      }
+
+      function randomSeed() {
+        var mas2 = [];
+
+        for (var i = 0; i < 30; i++) {
+          mas2[i] = [];
+          for (var j = 0; j < 30; j++) {
+            mas2[i][j] = Math.round(Math.random());
+          }
+        }
+
+        mas = mas2;
+        drawField();
+        count = 1;
+        document.getElementById("count").innerHTML = count;
+      }
+
+      function fpm(i) {
+        // функция для тора если выходит вверх/влево за рамки
+        if (i == 0) return 30;
+        else return i;
+      }
+      function fpp(i) {
+        // функция для тора если выходит вниз/вправо за рамки
+        if (i == 29) return -1;
+        else return i;
+      }
+
+      document.getElementById("start").onclick = startLife;
+      document.getElementById("randomSeed").onclick = randomSeed;
+    </script>
+  </body>
+</html>
