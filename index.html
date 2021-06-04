@@ -22,7 +22,10 @@
             <p>Итерация:</p>
             <span id="count" style="color: #8854aa">0</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <span id="numberOfGenerations" style="color: #8854aa">0</span>
+=======
+>>>>>>> parent of 1d222d1 (naming refactor)
 =======
 >>>>>>> parent of 1d222d1 (naming refactor)
           </div>
@@ -30,7 +33,10 @@
             <p>Живых клеток:</p>
             <span id="alifeCount" style="color: #1ac044">0</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <span id="aliveСellsQuantity" style="color: #1ac044">0</span>
+=======
+>>>>>>> parent of 1d222d1 (naming refactor)
 =======
 >>>>>>> parent of 1d222d1 (naming refactor)
           </div>
@@ -38,10 +44,13 @@
             <p>Мутаций:</p>
             <span id="count" style="color: #ff3c00">0</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <span id="numberOfGenerations" style="color: #ff3c00">0</span>
           </div>
           <div>
             <p id="cell-description"></p>
+=======
+>>>>>>> parent of 1d222d1 (naming refactor)
 =======
 >>>>>>> parent of 1d222d1 (naming refactor)
           </div>
@@ -55,6 +64,7 @@
       var mas = [];
       var count = 0;
       var alifeCount = 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
       var allCells = [];
       var numberOfGenerations = 1;
@@ -149,6 +159,9 @@
 =======
       var timer;
 >>>>>>> parent of 1d222d1 (naming refactor)
+=======
+      var timer;
+>>>>>>> parent of 1d222d1 (naming refactor)
 
       canvas.onclick = function (event) {
         var x = event.offsetX;
@@ -162,6 +175,7 @@
         } else {
           mas[y][x] = 1;
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
         mas = mas2;
 
@@ -213,6 +227,21 @@
           }
         }
 >>>>>>> parent of 1d222d1 (naming refactor)
+=======
+        drawField();
+        count = 1;
+      };
+
+      function goLife() {
+        var n = 30,
+          m = 30;
+        for (var i = 0; i < m; i++) {
+          mas[i] = [];
+          for (var j = 0; j < n; j++) {
+            mas[i][j] = 0;
+          }
+        }
+>>>>>>> parent of 1d222d1 (naming refactor)
       }
 
       goLife();
@@ -230,6 +259,7 @@
       }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       function fpm(i) {
       function normalizeTopLeftFieldPoint(i) {
         // функция для тора если выходит вверх/влево за рамки
@@ -243,6 +273,11 @@
         else return i;
       }
       
+=======
+      function startLife() {
+        var mas2 = [];
+        var setAlifeCount = 0;
+>>>>>>> parent of 1d222d1 (naming refactor)
 =======
       function startLife() {
         var mas2 = [];
