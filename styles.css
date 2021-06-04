@@ -137,32 +137,3 @@ button:hover {
 .stat:last-child {
   margin: 0;
 }
-
-@media (max-width: 756px) {
-  .wrapper {
-    max-width: 100%;
-    padding: 0 1rem;
-    flex-direction: column;
-  }
-
-  .all-stats {
-    position: static;
-    margin-top: 2rem;
-  }
-
-  .wrapper__leftside {
-    position: static;
-    width: 100%;
-    margin-bottom: 3rem;
-  }
-
-  #field {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 440px) {
-  .col-2fr {
-    grid-template-columns: 1fr;
-  }
-}
