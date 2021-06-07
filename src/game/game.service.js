@@ -195,7 +195,6 @@ export class GameService {
     } else {
       return {
         location,
-        isAlive,
         isAlive: true,
         born: this._generation,
         parents: {
