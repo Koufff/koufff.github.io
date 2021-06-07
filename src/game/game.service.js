@@ -156,7 +156,7 @@ export class GameService {
   _generateDnaPairs() {
     const nucleotides = ['A', 'T', 'C', 'G'];
 
-    const pairs = {
+    const gen = {
       pairs: [],
       isDominant: probability(50)
     };
@@ -178,10 +178,10 @@ export class GameService {
         pair.push('C');
       }
 
-      pairs.pairs.push(pair);
+      gen.pairs.push(pair);
     }
     
-    return pairs;
+    return gen;
   }
 
   _createNewCell(location, isAlive = true, parent1 = null, parent2 = null) {
