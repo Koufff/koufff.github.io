@@ -45,6 +45,8 @@ export class AbstractComponent {
     if (!this._el) {
       this._el = document.querySelector(`#${this._id}`);
     }
+
+    console.log(this._el)
     
     this.$_beforeUpdate();
 

@@ -44,10 +44,9 @@ export class GameOfLifeView extends AbstractComponent {
             <div id="start-btn"></div>
             <div id="random-btn"></div>
           </div>
+          <div id="cell-info"></div>
           <div id="game-info"></div>
         </aside>
-
-        <div id="cell-info"></div>
         <div id="game-screen"></div>
       </section>
     `
@@ -186,7 +185,7 @@ export class GameOfLifeView extends AbstractComponent {
   }
 
   setSelectedCell(cell) {
-    this.selectedCell = cell;
-    this.cellInfoCard.props.cell = this.selectedCell;
+    this._state.selectedCell = cell;
+    this.cellInfoCard.props.cell = this._state.selectedCell;
   }
 }

@@ -23,7 +23,6 @@ export class GameInfo extends AbstractComponent {
           <p>Мутаций:</p>
           <span id="numberOfGenerations" style="color: #ff3c00">${this.props.info.numberOfMutations}</span>
         </div>
-        <div id="cell-info"></div>
       </div>
     `;
   }
