@@ -64,7 +64,7 @@ export class GameScreen extends AbstractComponent {
     this._ctx.clearRect(0, 0, 300, 300);
     this.props.cells.forEach((cell) => {
       this._ctx.fillRect(cell.location.x * 10, cell.location.y * 10, 10, 10);
-      this._ctx.fillStyle = cell.dna.isMutated ? '#339526' : "#4D6B75";
+      this._ctx.fillStyle = cell.dna.isMutated ? '#ff3c00' : "#4D6B75";
     })
   }
 }
