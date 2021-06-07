@@ -12,9 +12,12 @@ export class CellInfoCard extends AbstractComponent {
     if (this.props.cell) {
       dna = this._props.cell.dna.map((row) => `${row.isDominant ? 'д' : 'р'}(${row.pairs.map(p => p.join('-')).join(',')})`).join('; ');
       return `
-      <h5>Клетка </h5>
+        <h5>Клетка </h5>
+        <br />
         ДНК: ${dna}
-        координаты: x: ${this.props.cell.location.x}, y: ${this.props.cell.location.y}.
+        <br /><br />
+        Координаты: x: ${this.props.cell.location.x}, y: ${this.props.cell.location.y}.
+        <br /><br />
         Родители: ${this.props.cell.parents ? 'есть' : 'нет'}
       `;
     }
