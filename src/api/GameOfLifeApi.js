@@ -30,12 +30,12 @@ export class GameOfLifeApi extends Observer {
   }
 
   pause() {
-    clearInterval(this._interval);
+    this._stopGameLoop();
     this._notify(EVENTS.pause);
   }
 
   stop() {
-    clearInterval(this.interval);
+    this._stopGameLoop();
     this._game.reset();
     this._notify(EVENTS.stop);
   }
@@ -60,6 +60,10 @@ export class GameOfLifeApi extends Observer {
 
   _startGameLoop() {
     this._interval = setInterval(() => this._nextGeneration(), LOOP_DELAY);
+  }
+
+  _stopGameLoop() {
+    clearInterval(this._interval);
   }
 
   _nextGeneration() {
