@@ -7,8 +7,9 @@ const BUTTON_TYPES = {
 
 const BUTTON_COLORS = {
   default: 'default',
-  accent: 'accent',
+  success: 'success',
   danger: 'danger',
+  accent: 'accent',
 };
 
 export class AppButton extends AbstractComponent {

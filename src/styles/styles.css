@@ -139,56 +139,6 @@ button svg path {
   margin-bottom: 12px;
 }
 
-#abort {
-  background: none;
-  color: #c52222;
-}
-
-#abort:hover {
-  background: #fff2f2;
-}
-
-#abort:active,
-#abort:focus {
-  background: #ffdada;
-  box-shadow: none;
-}
-
-#addMutantDNA {
-  background: none;
-  color: #8854aa;
-}
-
-#addMutantDNA:hover {
-  background: #eee8ff;
-}
-
-#addMutantDNA:active,
-#addMutantDNA:focus {
-  background: #e4dbff;
-  box-shadow: none;
-}
-
-#start {
-  background: #3abc47;
-  color: #fff;
-}
-
-#start:hover {
-  background: #31b23e;
-  cursor: pointer;
-}
-
-#start:active,
-#start:focus {
-  box-shadow: 0px 0px 0px 4px rgba(58, 188, 71, 0.25);
-}
-
-button:active,
-button:focus {
-  box-shadow: 0 0 0 4px #f3f4ff;
-}
-
 .app-button {
   background: #e3e5fd;
   color: #3a3c4e;
@@ -215,18 +165,18 @@ button:focus {
 }
 
 
-.app-button_accent {
+.app-button_success {
   background: #3abc47;
   color: #fff;
 }
 
-.app-button_accent:hover {
+.app-button_success:hover {
   background: #31b23e;
   cursor: pointer;
 }
 
-.app-button_accent:active,
-.app-button_accent:focus {
+.app-button_success:active,
+.app-button_success:focus {
   box-shadow: 0px 0px 0px 4px rgba(58, 188, 71, 0.25);
 }
 
@@ -245,6 +195,21 @@ button:focus {
   box-shadow: none;
 }
 
+
+.app-button_accent {
+  background: none;
+  color: #8854aa;
+}
+
+.app-button_accent:hover {
+  background: #eee8ff;
+}
+
+.app-button_accent:active,
+.app-button_accent:focus {
+  background: #e4dbff;
+  box-shadow: none;
+}
 
 
 

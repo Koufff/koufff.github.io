@@ -66,7 +66,7 @@ export class GameOfLifeView extends AbstractComponent {
 
   _renderComponents() {
     this.startBtn = new this._components.AppButton(
-      { label: 'Старт', type: 'primary', color: 'accent' },
+      { label: 'Старт', type: 'primary', color: 'success' },
       { click: () => this.onStartBtnClick() },
     ).mount('#start-btn');
 
