@@ -37,6 +37,18 @@ export class GameScreen extends AbstractComponent {
     return div;
   }
 
+  update() {
+    this._draw();
+  }
+
+  _draw() {
+    this._ctx.clearRect(0, 0, 300, 300);
+    this.props.cells.forEach((cell) => {
+      this._ctx.fillRect(cell.location.x * 10, cell.location.y * 10, 10, 10);
+      this._ctx.fillStyle = cell.dna.isMutated ? '#ff3c00' : "#4D6B75";
+    })
+  }
+
   _handleCellClick(cell) {
     if (typeof this.listeners.cellClick === 'function') {
       this.listeners.cellClick(cell)
@@ -54,17 +66,5 @@ export class GameScreen extends AbstractComponent {
     var isInYaxes = diffY < halfHeight; 
     
     return isInXaxes && isInYaxes;
-  }
-
-  update() {
-    this._draw();
-  }
-
-  _draw() {
-    this._ctx.clearRect(0, 0, 300, 300);
-    this.props.cells.forEach((cell) => {
-      this._ctx.fillRect(cell.location.x * 10, cell.location.y * 10, 10, 10);
-      this._ctx.fillStyle = cell.dna.isMutated ? '#ff3c00' : "#4D6B75";
-    })
   }
 }
