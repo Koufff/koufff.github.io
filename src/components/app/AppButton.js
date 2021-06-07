@@ -12,6 +12,15 @@ const BUTTON_COLORS = {
   accent: 'accent',
 };
 
+const BUTTON_ICONS = {
+  pause: `
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="4" height="22" rx="1" stroke-width="2"/>
+      <rect x="11" y="1" width="4" height="22" rx="1" stroke-width="2"/>
+    </svg>
+  `,
+}
+
 export class AppButton extends AbstractComponent {
 
   constructor(props = { id: null, label: '', type: BUTTON_TYPES.primary, color: BUTTON_COLORS.default }, listeners = {}) {
@@ -28,16 +37,26 @@ export class AppButton extends AbstractComponent {
     });
     btn.id = this._id;
     btn.classList = this.classes();
-    btn.innerText = this._props.label;
     
+    if (BUTTON_ICONS[this._props.icon]) {
+      btn.innerHTML = BUTTON_ICONS[this._props.icon];
+    } else {
+      btn.innerText = this._props.label;
+    }
+
     this._el = btn;
 
     return btn;
   }
 
   update() {
-    this._el.innerText = this._props.label;
     this._el.classList = this.classes();
+    
+    if (BUTTON_ICONS[this._props.icon]) {
+      this._el.innerHTML = BUTTON_ICONS[this._props.icon];
+    } else {
+      this._el.innerText = this._props.label;
+    }
   }
 
   classes() {

@@ -71,7 +71,7 @@ export class GameOfLifeView extends AbstractComponent {
     ).mount('#start-btn');
 
     this.randomBtn = new this._components.AppButton(
-      { label: 'Рандом', type: 'primary', color: 'default' },
+      { label: 'Случайная расстановка', type: 'primary', color: 'default' },
       { click: () => this.random() },
     ).mount('#random-btn');
     
@@ -131,7 +131,6 @@ export class GameOfLifeView extends AbstractComponent {
 
   start() {
     this.game.start();
-    this.startBtn.props.label = 'Пауза';
   }
 
   pause() {
@@ -150,6 +149,7 @@ export class GameOfLifeView extends AbstractComponent {
 
   onStart() {
     this._state.isStarted = true;
+    this.startBtn.props.label = 'Пауза';
   }
   
   onPause() {
@@ -160,6 +160,7 @@ export class GameOfLifeView extends AbstractComponent {
 
   onStop() {
     this.reset();
+    this.startBtn.props.label = 'Старт';
   }
   
   onError(error) {
