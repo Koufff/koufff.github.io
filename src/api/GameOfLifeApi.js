@@ -42,7 +42,10 @@ export class GameOfLifeApi extends Observer {
 
   random() {
     this._game.random();
-    this._notify(EVENTS.update, this._game.cells);
+    this._notify(EVENTS.update, {
+      cells: this._game.cells,
+      generation: this._game.generation,
+    });
   }
 
   _setupGame(settings = {
@@ -61,6 +64,9 @@ export class GameOfLifeApi extends Observer {
 
   _nextGeneration() {
     this._game.next();
-    this._notify(EVENTS.nextGeneration, this._game.cells);
+    this._notify(EVENTS.nextGeneration, {
+      cells: this._game.cells,
+      generation: this._game.generation,
+    });
   }
 }

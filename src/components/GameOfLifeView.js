@@ -24,6 +24,11 @@ export class GameOfLifeView extends AbstractComponent {
 
     this._state = {
       cells: [],
+      info: {
+        generation: 0,
+        cellsAlive: 0,
+        numberOfMutations: 0,
+      },
       selectedCell: null,
       isStarted: false,
       isPaused: false,
@@ -67,7 +72,7 @@ export class GameOfLifeView extends AbstractComponent {
       { click: () => this.random() },
     ).mount('#random-btn');
     
-    this.gameInfo = new this._components.GameInfo().mount('#game-info');
+    this.gameInfo = new this._components.GameInfo({ info: this._state.info }).mount('#game-info');
 
     this.gameScreen = new this._components.GameScreen(
       { cells: this._state.cells },
@@ -104,8 +109,8 @@ export class GameOfLifeView extends AbstractComponent {
     this.game.on('stop', () => this.onStop());
     this.game.on('error', () => this.onError());
 
-    this.game.on('next_generation', (cells) => this.setCells(cells));
-    this.game.on('update', (cells) => this.setCells(cells));
+    this.game.on('next_generation', (data) => this.handleUpdate(data));
+    this.game.on('update', (data) => this.handleUpdate(data));
   }
 
   onStartBtnClick() {
@@ -160,9 +165,24 @@ export class GameOfLifeView extends AbstractComponent {
     this.setSelectedCell(null);
   }
 
+  handleUpdate(data) {
+    this.setCells(data.cells);
+    this.setInfo(data);
+  }
+
   setCells(cells) {
     this.cells = cells;
     this.gameScreen.props.cells = this.cells;
+  }
+
+  setInfo(data) {
+    this._state.info = {
+      generation: data.generation,
+      cellsAlive: data.cells.length,
+      numberOfMutations: data.cells.filter((cell) => cell.dna.isMutated).length,
+    }
+
+    this.gameInfo.props.info = this._state.info;
   }
 
   setSelectedCell(cell) {

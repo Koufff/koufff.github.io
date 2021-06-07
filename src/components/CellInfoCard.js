@@ -11,12 +11,7 @@ export class CellInfoCard extends AbstractComponent {
     let dna = '';
 
     if (this.props.cell) {
-      try {
-        dna = this.props.cell.dna.map((row) => `${row.isDominant ? 'д' : 'р'}(${row.pairs.map(p => p.join('-')).join(',')})`).join('; ');
-      } catch (error) {
-        console.log(error);
-        console.log(this.props.cell);        
-      }
+      dna = this.props.cell.dna.map((row) => `${row.isDominant ? 'д' : 'р'}(${row.pairs.map(p => p.join('-')).join(',')})`).join('; ');
 
       return `
       <h5>Клетка </h5>

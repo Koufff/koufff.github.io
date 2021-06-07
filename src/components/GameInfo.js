@@ -39,7 +39,11 @@ export class GameInfo extends AbstractComponent {
 
   _getPropsWithDefaults(props) {
     return {
-      info: props.info || {},
+      info: props.info || {
+        generation: 0,
+        cellsAlive: 0,
+        numberOfMutations: 0,
+      },
     }
   }
 }
