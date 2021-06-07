@@ -36,17 +36,17 @@ export class AppButton extends AbstractComponent {
 
   update() {
     this._el.innerText = this._props.label;
-    this._el.classList = this.classes;
+    this._el.classList = this.classes();
   }
 
   classes() {
     const classes = ['app-button'];
 
-    if (BUTTON_TYPES[this._type]) {
+    if (BUTTON_TYPES[this._props.type]) {
       classes.push(`app-button_${this._props.type}`);
     }
 
-    if (BUTTON_COLORS[this._color]) {
+    if (BUTTON_COLORS[this._props.color]) {
       classes.push(`app-button_${this._props.color}`);
     }
 
