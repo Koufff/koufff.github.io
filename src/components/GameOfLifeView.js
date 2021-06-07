@@ -52,6 +52,10 @@ export class GameOfLifeView extends AbstractComponent {
         <aside class="wrapper__column" id="center">
           <div id="game-screen"></div>
         </aside>
+
+        <aside class="wrapper__column" id="console">
+          <div id="cell-info"></div>
+        </aside>
       </section>
     `
   }
