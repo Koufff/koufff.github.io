@@ -8,10 +8,9 @@ export class AbstractComponent {
     onNewComponent();
 
     this._el = null;
-    this._container = null;
-    
-    this._uid = numberOfComponents;
 
+    this._uid = numberOfComponents;
+    
     this._props = this._getPropsWithDefaults(props);
     this._defineReactiveProps();
     this.listeners = listeners;
