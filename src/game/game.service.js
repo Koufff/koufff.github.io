@@ -189,6 +189,7 @@ export class GameService {
       return {
         location,
         isAlive,
+        parents: null,
         born: this._generation,
         dna: this._generateDna(),
       }
